@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>   
+    <link rel="icon" href="{% static '/core/img/MILIBRO.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="{% static '/core/css/homestyle.css' %}">
+    <link rel="stylesheet" href="{% static '/core/css/banner.css' %}">
+    <link rel="stylesheet" href="{% static '/core/css/keyframes.css' %}">
+    <link rel="stylesheet" href="{% static '/core/css/footerstyle.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+
+
+<body>
+    <header></header>
+
+
+    <section>
+
+        <div class="cont_banner">
+            <div class="sombra">
+                <h1>Mi Libro</h1>
+                <p>por Master Key</p>
+                <hr/>
+                <div class="cont_banner_link">
+                    <a class="banner_link" href="">Home</a>
+                    <a class="banner_link_1" href="#">Cuerpo Estudiantil</a>
+                    <a class="banner_link_2" href="#">Apoderado</a>
+                    <a class="banner_link_3" href="#">Alumno</a>
+                    <a class="banner_link_4" href="#">Administrador</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+
+    <!-- Eslogan Empresa -->
+    <div class="call-to-action-area3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cta-content3 d-flex align-items-center justify-content-between flex-wrap">
+                        <h3>Libros de Clases y sus Cursos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Termino Eslogan Empresa -->
+
+        <div class="container">
+            <div class="row cont_sec_1">
+                <div class="col-md-9">
+                    <h2><b></b></h2>
+                    <hr />
+                </div>        
+                    <!--Tarjeta Primero A-->
+	                <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card-section border rounded ml-3 mr-3">
+                           <div class="card-header card-header-second rounded">
+                              <h2 class="card-header-title mb-3 mt-1 text-white text-center">Libro de Clases</h2>
+                           </div>
+                           <div class="card-body text-justify-center">
+                                 <p class="card-text">Establecimiento: -- </p>
+                                 <br>
+                                 <p class="card-text">Profesor Jefe: Juan Zepeda </p>
+                               <br>
+                               <p class="card-text">Curso: Primero A </p> 
+                               <br>
+                               <p class="card-text">Enseñanza: Básica </p> 
+                               <br>
+                               <p class="card-text">Año: 2022 </p> 
+                               <br>                                                                  
+                               <a href="{% url 'loginCE' %}" class="btn btn-lg btn-success">Abrir</a>
+                           </div>
+                       </div>
+                   </div>
+
+                    <!--tarjeta 2-->
+	                <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card-section border rounded ml-3 mr-3">
+                           <div class="card-header card-header-second rounded">
+                              <h2 class="card-header-title mb-3 mt-1 text-white text-center">Libro de Clases</h2>
+                           </div>
+                           <div class="card-body text-justify-center">
+                                 <p class="card-text">Establecimiento: -- </p>
+                                 <br>
+                                 <p class="card-text">Profesor Jefe: Sin Asignar </p>
+                               <br>
+                               <p class="card-text">Curso: Primero B </p> 
+                               <br>
+                               <p class="card-text">Enseñanza: Básica </p> 
+                               <br>
+                               <p class="card-text">Año: 2022 </p> 
+                               <br>                                                                  
+                               <button class="btn btn-lg btn-danger">Sin Registros</button>
+                           </div>
+                       </div>
+                   </div>
+                  
+                    <!--tarjeta 3-->
+	                <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card-section border rounded ml-3 mr-3">
+                           <div class="card-header card-header-second rounded">
+                              <h2 class="card-header-title mb-3 mt-1 text-white text-center">Libro de Clases</h2>
+                           </div>
+                           <div class="card-body text-justify-center">
+                                 <p class="card-text">Establecimiento: -- </p>
+                                 <br>
+                                 <p class="card-text">Profesor Jefe: Sin Asignar </p>
+                               <br>
+                               <p class="card-text">Curso: Segundo A </p> 
+                               <br>
+                               <p class="card-text">Enseñanza: Básica </p> 
+                               <br>
+                               <p class="card-text">Año: 2022 </p> 
+                               <br>                                                                  
+                               <button class="btn btn-lg btn-danger">Sin Registros</button>
+                           </div>
+                       </div>
+                   </div>
+
+                    <!--tarjeta 4-->
+	                <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card-section border rounded ml-3 mr-3">
+                           <div class="card-header card-header-second rounded">
+                              <h2 class="card-header-title mb-3 mt-1 text-white text-center">Libro de Clases</h2>
+                           </div>
+                           <div class="card-body text-justify-center">
+                                 <p class="card-text">Establecimiento: -- </p>
+                                 <br>
+                                 <p class="card-text">Profesor Jefe: Sin Asignar </p>
+                               <br>
+                               <p class="card-text">Curso: Segundo B </p> 
+                               <br>
+                               <p class="card-text">Enseñanza: Básica </p> 
+                               <br>
+                               <p class="card-text">Año: 2022 </p> 
+                               <br>                                                                  
+                               <button class="btn btn-lg btn-danger">Sin Registros</button>
+                           </div>
+                       </div>
+                   </div>
+
+                    <!--tarjeta 5-->
+	                <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card-section border rounded ml-3 mr-3">
+                           <div class="card-header card-header-second rounded">
+                              <h2 class="card-header-title mb-3 mt-1 text-white text-center">Libro de Clases</h2>
+                           </div>
+                           <div class="card-body text-justify-center">
+                                 <p class="card-text">Establecimiento: -- </p>
+                                 <br>
+                                 <p class="card-text">Profesor Jefe: Sin Asignar </p>
+                               <br>
+                               <p class="card-text">Curso: Tercero A </p> 
+                               <br>
+                               <p class="card-text">Enseñanza: Básica </p> 
+                               <br>
+                               <p class="card-text">Año: 2022 </p> 
+                               <br>                                                                  
+                               <button class="btn btn-lg btn-danger">Sin Registros</button>
+                           </div>
+                       </div>
+                   </div>
+                  
+                    <!--tarjeta 6-->
+	                <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card-section border rounded ml-3 mr-3">
+                           <div class="card-header card-header-second rounded">
+                              <h2 class="card-header-title mb-3 mt-1 text-white text-center">Libro de Clases</h2>
+                           </div>
+                           <div class="card-body text-justify-center">
+                                 <p class="card-text">Establecimiento: -- </p>
+                                 <br>
+                                 <p class="card-text">Profesor Jefe: Sin Asignar </p>
+                               <br>
+                               <p class="card-text">Curso: Tercero B </p> 
+                               <br>
+                               <p class="card-text">Enseñanza: Básica </p> 
+                               <br>
+                               <p class="card-text">Año: 2022 </p> 
+                               <br>                                                                  
+                               <button class="btn btn-lg btn-danger">Sin Registros</button>
+                           </div>
+                       </div>
+                   </div>                        
+
+                    </div>
+                </div>
+            </div>             
+        </div>    
+
+    <!-- Eslogan Empresa -->
+    <div class="call-to-action-area3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cta-content3 d-flex align-items-center justify-content-between flex-wrap">
+                        <h3></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Termino Eslogan Empresa -->
+    
+<!-- Footer Area -->
+    <footer id="dk-footer" class="dk-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="dk-footer-box-info">
+                        <a class="footer-logo">
+                            <img src="{% static '/core/img/LOGO_KEY_WHITE.png' %}" alt="footer_logo" class="img-fluid">
+                        </a>
+                        <h6 class="footer-info-text text-white">
+                            ¡Buscamos la mejor calidad para nuestros clientes!
+                        </h6>
+                        <div class="footer-social-link">
+                            <h3>Redes Sociales</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Social link -->
+                    </div>
+                    <!-- End Footer info -->
+                    <div class="footer-awarad">
+                        <img src="images/icon/best.png" alt="">
+                    </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-us contact-us-last">
+                                <div class="contact-icon">
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                        <div class="col-md-6">
+                            <div class="contact-us contact-us-last">
+                                <div class="contact-icon">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>9 95 711 9 5353</h3>
+                                    <p>Contactanos</p>
+                                    <span class="animate-border border-black"></span>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Contact Row -->
+                        <div class="col-md-12 col-lg-6">
+                            <div class="footer-widget">
+                                <form action="#">
+                                    <div class="form-row">
+                                    </div>
+                                </form>
+                                <!-- End form -->
+                            </div>
+                            <!-- End footer widget -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Widget Row -->
+        </div>
+        <!-- End Contact Container -->
+
+
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>Copyright © 2022, Todos los derechos reservados por Master Key</span>
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Copyright Container -->
+        </div>
+        <!-- End Copyright -->
+
+</footer>
+
+    <script src="{% static 'core/js/main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

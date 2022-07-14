@@ -1,0 +1,77 @@
+{% extends 'Libro/base.html' %}
+
+{% load static %}
+
+{% block title %}Anotacion{% endblock %}
+{% block contenido %}
+
+
+<div class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{% static 'core/img/proff.png' %}" class="img-fluid rounded-circle avatar mr-2" />
+                            {{ user.username | upper }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'perfil' %}">Mi perfil</a>
+                                <a class="dropdown-item" href="#">Mensajes</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logoutCE' %}">Cerrar sesión</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content" class="bg-grey w-100">
+
+        <section class="bg-light py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8">
+                        <h5 class="font-weight-bold mb-0">Anotaciones de los Estudiantes</h5>
+                        <td>
+                            <a href="{% url 'agregar_anotacion' %}" class="btn btn-success btn-sm " style="font-size: 10px;"> Anotación </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'lista_anotaciones' %}" class="btn btn-warning btn-sm" style="font-size: 10px;">Ver Anotacion</a>
+                        </td>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row mt-4 mb-4">
+                    {% for a in entity %}
+                    <div class="card-deck" style="width: 18rem; padding: 10px;">
+                        <div class="card bg-dark text-white">
+                            {% if a.imagen%}
+                            <img src="{{ a.imagen.url }}" alt="imagen"
+                                style="height: 100%; height: 200px; object-fit: cover;">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{a.nombres}}</h5>
+                                <p class="card-text">
+                                    <b>Apellidos:</b> {{a.apPaterno}} {{a.apMaterno}}. <br>
+                                    <b>Rut :</b> {{a.rut}}. <br>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+            <div>
+                {% include 'Libro/paginator.html' %}
+        </section>
+    </div>
+</div>
+
+{% endblock %}

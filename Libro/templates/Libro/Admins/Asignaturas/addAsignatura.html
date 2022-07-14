@@ -1,0 +1,92 @@
+{% extends 'Libro/base.html' %}
+
+{% load static %}
+
+{% block title %}Administracion{% endblock %}
+{% block contenido %}
+<div class="d-flex">
+    <div id="sidebar-container" class="bg-primary">
+        <div class="logo">
+            <h4 class="text-light font-weight-bold">Mi Libro</h4>
+        </div><i class="icon ion-md-done"></i>
+        <div class="menu">
+            <a href="#" class="d-block text-light p-3"><i
+                    class="icon ion-md-people mr-2 lead"></i>Registo de Alumnos</a>
+            <a href="{% url 'agregar_Profesor' %}" class="d-block text-light p-3"><i
+                    class="icon ion-md-school mr-2 lead"></i>Registro de Profesores</a>
+            <a href="#" class="d-block text-light p-3"><i
+                    class="icon ion-md-clipboard mr-2 lead"></i>Registro de Apoderados</a>
+            <a href="#" class="d-block text-light p-3"><i
+                    class="icon ion-md-mail mr-2 lead"></i>Registrar Inspectores</a>
+        </div>
+    </div>
+
+    <div class="w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{% static 'core/img/admin.png' %}"
+                                    class="img-fluid rounded-circle avatar mr-2" />
+                                Gabriel Montecinos
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'admin' %}">Mi perfil</a>
+                                <a class="dropdown-item" href="#">Mensajes</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Cerrar sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="content" class="bg-grey w-100">
+
+            <section class="bg-light py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-8">
+                            <h5 class="font-weight-bold mb-0">Registrar Asignaturas</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="card-body " style="background-color: gainsboro;">
+                        <form form action="" method="post" >
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label class="fw-bold">Asignaturas</label>
+                                    <div class="input-group">
+                                        {{form.asignatura}}
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <input type="reset" value="Cancelar" class="btn btn-danger">
+                                &nbsp;
+                                <input type="submit" value="Guardar" class="btn btn-success">
+                            </div>
+                        </form>
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-warning btn-sm">Listado Asignaturas</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

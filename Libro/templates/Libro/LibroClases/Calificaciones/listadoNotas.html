@@ -1,0 +1,91 @@
+{% extends 'Libro/base.html' %}
+
+{% load static %}
+
+{% block title %}Calificaciones{% endblock %}
+{% block contenido %}
+
+<div class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{% static 'core/img/proff.png' %}"
+                                class="img-fluid rounded-circle avatar mr-2" />
+                                {{ user.username | upper }}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'perfil' %}">Mi perfil</a>
+                                <a class="dropdown-item" href="#">Mensajes</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'logoutCE' %}">Cerrar sesión</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content" class="bg-grey w-100">
+        <section class="bg-light py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8">
+                        <h5 class="font-weight-bold mb-0" >Listado de Notas: {{order_count}}</h5>
+                        
+                    </div>
+                    <a href="{% url 'calificaciones' %}" class="btn btn-outline-dark btn-sm">VOLVER</a>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col">
+                <div class="card card-body">
+                    <form method="get">
+
+                        {{myFilter.form}}
+                        <button class="btn btn-primary btn-sm" type="submit">Buscar
+                        </button>
+                        <button class="btn btn-danger btn-sm" type="re">Cancelar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container"> 
+           
+            <table class="table table-striped table-hover table-responsive-sm" >
+                <tr>
+                    <th>Nombre Estudiante</th>
+                    <th>Asignatura</th>
+                    <th>N°</th>
+                    <th>Calificación</th>
+                    <th>Fecha</th>
+                    <th>Opciones</th>
+                    <th></th>
+                </tr>
+                
+                    {% for order in orders %}
+
+                    <tr>
+                        <td>{{order.alumno}}</td>
+                        <td>{{order.asignatura}}</td>
+                        <td>{{order.tipo}}</td>
+                        <td>{{order.nota}}</td>
+                        <td>{{order.fecha}}</td>
+                        <td>
+                            <a  href="#" class="btn btn-info btn-sm">modificar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    
+            </table>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

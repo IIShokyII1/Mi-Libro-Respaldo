@@ -1,0 +1,55 @@
+:root{
+    --primary: #28a745;
+    --ligth: #ffffff;
+    --grey: #efefef;
+    
+    --primario: #A5C882;
+    --secundario: #D33F49;
+    --luz: #fff;
+    --dark: #000;
+    --diabled: #e7e7e7;
+}
+
+body{
+    overflow: hidden;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.bg-primary { background-color: var(--primary) !important;}
+.bg-light {background-color: var(--light) !important;}
+
+#sidebar-container {
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu {
+    width: 18rem;
+}
+
+.avatar {
+    max-width: 35px;
+}
+
+.stat {
+    border-right: 1px solid var(--grey);
+}
+
+/* ==========================
+
+    DISEÑO TABLAS
+
+=============================*/
+
+

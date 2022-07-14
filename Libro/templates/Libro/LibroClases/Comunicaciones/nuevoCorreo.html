@@ -1,0 +1,102 @@
+{% extends 'Libro/base.html' %}
+
+{% load static %}
+
+{% block title %}Nuevo Correo{% endblock %}
+{% block contenido %}
+
+<div class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{% static 'core/img/proff.png' %}" class="img-fluid rounded-circle avatar mr-2" />
+                            {{ user.username | upper }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url 'perfil' %}">Mi perfil</a>
+                                    <a class="dropdown-item" href="#">Mensajes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'logoutCE' %}">Cerrar sesión</a>
+                                </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="content" class="bg-grey w-100">
+
+        <section class="bg-light py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-8">
+                        <h5 class="font-weight-bold mb-0">Nuevo Correo </h5>
+                        
+                    </div>
+                    <a href="{% url 'comunicaciones' %}" class="btn btn-outline-secondary btn-sm">Volver</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="content" class="bg-grey w-100">
+                <section>
+                    <div class="container">
+                        <div class="card-body " style="background-color: gainsboro;">
+                            <form form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="form-group col-md-3" >
+                                        <label class="fw-bold">Nombre </label>
+                                        <div class="input-group">
+                                            {{form.name}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-3" >
+                                        <label class="fw-bold">Asunto</label>
+                                        <div class="input-group">
+                                            {{form.subject}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="fw-bold">Estado</label>
+                                        <div class="input-group">
+                                            {{form.status}}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label class="fw-bold">Destinatario</label>
+                                        <div class="input-group">
+                                            {{form.correo}}
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label class="fw-bold">Mensaje</label>
+                                        <div class="input-group">
+                                            {{form.body}}
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                <div class="btn-sm justify-content-center" style="margin-top: 30px;">
+                                    <input type="reset" value="Cancelar" class="btn btn-danger">
+                                    &nbsp;
+                                    <input  type="submit" value="Enviar" class="btn btn-success">
+                                </div>
+                            </form>
+                            {{mensaje}}
+                            
+
+                        </div>
+                    </div>
+                </section>   
+            </div>
+
+    </div>
+</div>
+
+{% endblock %}

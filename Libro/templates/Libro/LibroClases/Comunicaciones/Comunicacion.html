@@ -1,0 +1,77 @@
+{% extends 'Libro/base.html' %}
+
+{% load static %}
+
+{% block title %}Comunicaciones{% endblock %}
+{% block contenido %}
+
+    <div class="w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{% static 'core/img/proff.png' %}"
+                                    class="img-fluid rounded-circle avatar mr-2" />
+                                    {{ user.username | upper }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url 'perfil' %}">Mi perfil</a>
+                                    <a class="dropdown-item" href="#">Mensajes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'logoutCE' %}">Cerrar sesión</a>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="content" class="bg-grey w-100">
+
+            <div class="container">
+                    
+                <section class="bg-light py-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-8">
+                                <h5 class="font-weight-bold mb-0" >Comunicaciones</h5>
+                                
+                            </div>
+                            <a href="{% url 'nuevoCorreo' %}" class="btn btn-outline-success btn-sm">Crear nuevo correo</a>
+                            
+                        </div>
+                    </div>
+                </section>
+                <table class="table table-striped table-hover table-responsive-sm" >
+                    <tr>
+                        <th >Nombre Correo  </th>
+                        <th>Asunto</th>
+                        <th>Fecha de creación</th>
+                        <th>Estado</th>
+                    </tr>
+
+                    {% for com in entity %}
+
+                    <tr>
+                        <td>
+                            <a href="{% url 'detalleCorreo' com.id %} ">
+                                {{com.name}}
+                            </a>
+                        </td>
+                        <td>{{com.subject}}</td>
+                        <td>{{com.created}}</td>
+                        <td>{{com.status}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+                {% include 'Libro/paginator.html' %}
+        </div>
+
+        </div>
+    </div>
+
+{% endblock %}

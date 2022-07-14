@@ -1,0 +1,40 @@
+{% extends 'Libro/login/baseLogin.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block contenido %}
+<div class="login-container">
+    <div class="login-info-container">
+        <h1 class="title">Mi Libro</h1>
+        <div class="social-login">
+            <div class="social-login-element">
+                <img src="{% static '/core/img/logoMiLibro.png' %}" alt="google-image">
+            </div>
+        </div>
+        <form class="inputs-container" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+               {% if form.error_messages %}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Advertencia: </strong> {{ form.get_invalid_login_error }}
+                </div>
+               {% endif %} 
+                <label> Nombre de usuario </label>
+                {{form.username}}
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                {{form.password}}
+            </div>
+            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Iniciar Sesión</button>
+            &nbsp;
+            <a href="{% url 'home' %}">ir al home</a>
+        </form>
+    </div>
+    <img class="image-container" src="{% static '/core/img/MASTERKEY_INC.png' %}" alt="MASTERKEY_INC">
+</div>
+{% endblock %}

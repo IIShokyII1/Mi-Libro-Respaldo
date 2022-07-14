@@ -1,0 +1,86 @@
+{% extends 'Libro/base.html' %}
+
+{% load static %}
+
+{% block title %} Agregar Notas {% endblock %}
+{% block contenido %}
+
+
+    <div class="w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{% static 'core/img/proff.png' %}"
+                                    class="img-fluid rounded-circle avatar mr-2" />
+                                    {{ user.username | upper }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{% url 'perfil' %}">Mi perfil</a>
+                                    <a class="dropdown-item" href="#">Mensajes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{% url 'logoutCE' %}">Cerrar sesión</a>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="content" class="bg-grey w-100">
+            <br>
+                <div class="row">
+                    <div class="col-12 col-md-6 offset-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="font-weight-bold mb-0">Agregar Nota</h5>
+                            </div>
+                            <div class="card-body">
+                                <form form action="" method="post" >
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label class="fw-bold">Nombre estudiante</label>
+                                            <div class="input-group">
+                                                {{form.alumno}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="fw-bold">Asignatura</label>
+                                            <div class="input-group">
+                                                {{form.asignatura}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="fw-bold">Tipo de la nota</label>
+                                            <div class="input-group">
+                                                {{form.tipo}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="fw-bold">Calificación</label>
+                                            <div class="input-group">
+                                                {{form.nota}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <a  href="{% url 'calificaciones' %}" class="btn btn-danger btn-sm">Cancelar</a>
+                                        &nbsp;
+                                        <input type="submit" value="Guardar" class="btn btn-success">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>  
+        </div>
+    </div>
+
+
+{% endblock %}
